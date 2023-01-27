@@ -1,0 +1,10 @@
+{
+  "name": "joaofernandes-message-web",
+  "domain": "joaofernandes-messages.xf.mkrs.link",
+  "port": 5000,
+  "env": {
+    "APP_ENV": "PRODUCTION",
+    "POSTGRES_HOSTNAME": "joaofernandes-message-database",
+    "POSTGRES_PASSWORD": "@joaofernandes-postgres-password"
+  }
+}

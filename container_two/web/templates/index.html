@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Message Board</title>
+    <meta charset="utf-8">
+    </head>
+    <style>
+        * {
+            font-family: Impact;
+            color: aliceblue;
+        }
+        body {
+            background-image: url("https://i.kym-cdn.com/entries/icons/original/000/021/807/ig9OoyenpxqdCQyABmOQBZDI0duHk2QZZmWg2Hxd4ro.jpg"); 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        li {
+            font-size: 130%;
+            padding-bottom: 2%;
+            list-style-type: none;
+        }
+        .box {
+            color: black;
+            font-size: 120%;
+        }
+        div.post {
+            width: auto;
+            word-wrap: break-word;
+}
+    </style>
+    <body>
+    <h1>Posted Messages</h1>
+        <!-- We'll use Jinja's `for` loop to iterate over all books -->
+        
+            <ul>
+                {% for row in rows %}
+                <div class="post">
+                    <li>{{row[0]|escape}}</li>
+                </div>
+                {% endfor %}
+            </ul>
+        <!-- Jinja isn't Python, so we need an endfor to close the loop -->
+        <form action="/" method="POST">
+            <!-- We check to see if there are any errors from a previous submission -->
+            <p>
+                <!-- These `label` tags are important for accessibility -->
+                <label for="message">Add new message</label>
+                <input type="text" name="message" id="message" class="box">
+                <input type="submit" value="Commit" class="box">
+            </p>
+        </form>
+        <form action="/clear" method="POST">
+            <!-- We check to see if there are any errors from a previous submission -->
+            <p>
+                <!-- These `label` tags are important for accessibility -->
+                <input type="submit" value="Clear Posts" class="box">
+            </p>
+        </form>
+    </body>
+</html>
